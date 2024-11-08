@@ -6,9 +6,53 @@
     <title>Prenotazione Posti Stadio Pegaso</title>
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
+    <style>
+        /* Aggiunta di stile per l'immagine del logo */
+        .logo {
+            width: 100px; /* Dimensione ridotta */
+            height: 100px; /* Altezza per mantenere il rapporto */
+            border-radius: 50%; /* Rende l'immagine rotonda */
+            object-fit: cover; /* Assicura che l'immagine si adatti bene nel cerchio */
+            margin: 10px auto; /* Margine per centrare */
+            display: block; /* Centra l'immagine */
+        }
+
+        /* Sfondo sfocato */
+        .blur-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("sfondo.png"); /* Immagine di sfondo */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            filter: blur(2px); /* Ridotta sfocatura del 50% */
+            z-index: -1; /* Mantiene lo sfondo dietro il contenuto */
+        }
+
+        /* Stile per le scritte in nero e grassetto */
+        p, #legend span, #seat-details, h1 {
+            color: #000000; /* Colore nero */
+            font-weight: bold; /* Grassetto */
+        }
+
+        /* Colore nero e grassetto per il titolo "Dettagli Posto" */
+        #info-box h2 {
+            color: #000000;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
+    <!-- Div per lo sfondo sfocato -->
+    <div class="blur-background"></div>
+
     <h1>Prenotazione Posti per lo Stadio Pegaso</h1>
+    <!-- Aggiunta dell'immagine del logo con classe per lo stile -->
+    <img src="logo.png" alt="Logo AC Pegaso" class="logo">
+    
     <p>Seleziona un posto per visualizzare i dettagli.</p>
 
     <div id="stadium-container">
@@ -32,6 +76,34 @@
         <div class="legend-item">
             <div class="legend-color tribuna-color"></div>
             <span>Tribuna</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color distinti-color"></div>
+            <span>Distinti</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color curva-nord-color"></div>
+            <span>Curva Nord</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color curva-sud-color"></div>
+            <span>Curva Sud</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color non-disponibile-color"></div>
+            <span>Non disponibile</span>
+        </div>
+    </div>
+
+    <!-- Dettagli del posto selezionato -->
+    <div id="info-box">
+        <h2>Dettagli Posto</h2>
+        <p id="seat-details">Seleziona un posto per vedere i dettagli.</p>
+        <button id="prenota-btn" style="display: none;">Prenota</button>
+    </div>
+</body>
+</html>
+
         </div>
         <div class="legend-item">
             <div class="legend-color distinti-color"></div>
