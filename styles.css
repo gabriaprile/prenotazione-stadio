@@ -143,6 +143,8 @@ body {
 .legend-item {
     display: flex;
     align-items: center;
+    color: #000000; /* Colore nero per il testo della legenda */
+    font-weight: bold; /* Grassetto */
 }
 
 .legend-color {
@@ -166,6 +168,8 @@ body {
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     display: inline-block;
+    color: #000000; /* Colore nero */
+    font-weight: bold; /* Grassetto */
 }
 
 /* Stile per il tasto "Prenota" */
@@ -181,4 +185,25 @@ body {
 
 #prenota-btn:hover {
     background-color: #45a049;
+}
+
+/* Sfondo sfocato */
+.blur-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("sfondo.png"); /* Immagine di sfondo */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    filter: blur(2px); /* Ridotta sfocatura del 50% */
+    z-index: -1; /* Mantiene lo sfondo dietro il contenuto */
+}
+
+/* Assicura che il contenuto sia sopra lo sfondo */
+#stadium-container, #info-box, #legend, h1, p {
+    position: relative;
+    z-index: 1;
 }
