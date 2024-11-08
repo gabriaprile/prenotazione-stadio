@@ -1,0 +1,184 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+#stadium-container {
+    position: relative;
+    width: 700px;
+    height: 500px;
+    margin: 20px auto;
+    background-color: #c0c0c0;
+    border-radius: 30px;
+    overflow: hidden;
+    display: grid;
+    grid-template-areas:
+        "tribuna tribuna tribuna"
+        "curva-nord field curva-sud"
+        "distinti distinti distinti";
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+    gap: 10px;
+}
+
+/* Campo da calcio */
+#field {
+    grid-area: field;
+    position: relative;
+    background-color: #4CAF50;
+    border-radius: 15px;
+    border: 2px solid white;
+}
+
+/* Linee del campo */
+.linea-centrale, .cerchio-centrale, .area-porta {
+    position: absolute;
+    background-color: white;
+}
+
+.linea-centrale {
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    transform: translateX(-50%);
+}
+
+.cerchio-centrale {
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid white;
+    transform: translate(-50%, -50%);
+}
+
+.area-porta.sinistra, .area-porta.destra {
+    width: 40px;
+    height: 60px;
+    border: 2px solid white;
+}
+
+.area-porta.sinistra { left: 5%; top: 50%; transform: translateY(-50%); }
+.area-porta.destra { right: 5%; top: 50%; transform: translateY(-50%); }
+
+/* Settori */
+.sector {
+    display: grid;
+    grid-gap: 5px;
+    padding: 10px;
+}
+
+#tribuna {
+    grid-area: tribuna;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    background-color: transparent;
+}
+
+#distinti {
+    grid-area: distinti;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    background-color: transparent;
+}
+
+#curva-nord {
+    grid-area: curva-nord;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    background-color: transparent;
+}
+
+#curva-sud {
+    grid-area: curva-sud;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    background-color: transparent;
+}
+
+/* Posti nei settori */
+.seat {
+    width: 100%;
+    height: 100%;
+    background-color: gray;
+    border-radius: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.seat.tribuna { background-color: #ff6f61; }
+.seat.distinti { background-color: #4db8ff; }
+.seat.curva-nord { background-color: #ffcc66; }
+.seat.curva-sud { background-color: #4dff8e; }
+
+.seat:hover {
+    transform: scale(1.1);
+}
+
+.seat.selected {
+    border: 2px solid black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Stile per i posti prenotati */
+.seat.booked {
+    background-color: black;
+    cursor: not-allowed;
+}
+
+/* Legenda */
+#legend {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    margin-right: 8px;
+}
+
+.tribuna-color { background-color: #ff6f61; }
+.distinti-color { background-color: #4db8ff; }
+.curva-nord-color { background-color: #ffcc66; }
+.curva-sud-color { background-color: #4dff8e; }
+.non-disponibile-color { background-color: black; } /* Nuovo stile per "Non disponibile" */
+
+/* Informazioni */
+#info-box {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+/* Stile per il tasto "Prenota" */
+#prenota-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#prenota-btn:hover {
+    background-color: #45a049;
+}

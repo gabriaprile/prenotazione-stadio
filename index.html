@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prenotazione Posti Stadio Pegaso</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <h1>Prenotazione Posti per lo Stadio Pegaso</h1>
+    <p>Seleziona un posto per visualizzare i dettagli.</p>
+
+    <div id="stadium-container">
+        <!-- Campo da calcio -->
+        <div id="field">
+            <div class="linea-centrale"></div>
+            <div class="cerchio-centrale"></div>
+            <div class="area-porta sinistra"></div>
+            <div class="area-porta destra"></div>
+        </div>
+
+        <!-- Settori di posti -->
+        <div id="tribuna" class="sector" data-name="Tribuna"></div>
+        <div id="distinti" class="sector" data-name="Distinti"></div>
+        <div id="curva-nord" class="sector" data-name="Curva Nord"></div>
+        <div id="curva-sud" class="sector" data-name="Curva Sud"></div>
+    </div>
+
+    <!-- Legenda dei settori -->
+    <div id="legend">
+        <div class="legend-item">
+            <div class="legend-color tribuna-color"></div>
+            <span>Tribuna</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color distinti-color"></div>
+            <span>Distinti</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color curva-nord-color"></div>
+            <span>Curva Nord</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color curva-sud-color"></div>
+            <span>Curva Sud</span>
+        </div>
+        <!-- Nuovo elemento per i posti non disponibili -->
+        <div class="legend-item">
+            <div class="legend-color non-disponibile-color"></div>
+            <span>Non disponibile</span>
+        </div>
+    </div>
+
+    <!-- Dettagli del posto selezionato -->
+    <div id="info-box">
+        <h2>Dettagli Posto</h2>
+        <p id="seat-details">Seleziona un posto per vedere i dettagli.</p>
+        <button id="prenota-btn" style="display: none;">Prenota</button>
+    </div>
+</body>
+</html>
+
