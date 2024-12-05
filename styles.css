@@ -6,6 +6,23 @@ body {
     padding: 20px;
 }
 
+h1 {
+    margin-bottom: 10px; /* Margine inferiore per separare il logo dal titolo */
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0 20px; /* Margine per posizionare il logo */
+}
+
+.logo {
+    width: 80px; /* Riduce la dimensione del logo */
+    height: 80px; /* Riduce la dimensione del logo */
+    border-radius: 50%; /* Mantiene l'immagine rotonda */
+    object-fit: cover; /* Assicura che l'immagine si adatti al cerchio */
+}
+
 #stadium-container {
     position: relative;
     width: 700px;
@@ -126,7 +143,6 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Stile per i posti prenotati */
 .seat.booked {
     background-color: black;
     cursor: not-allowed;
@@ -143,8 +159,8 @@ body {
 .legend-item {
     display: flex;
     align-items: center;
-    color: #000000; /* Colore nero per il testo della legenda */
-    font-weight: bold; /* Grassetto */
+    color: #000000;
+    font-weight: bold;
 }
 
 .legend-color {
@@ -158,9 +174,8 @@ body {
 .distinti-color { background-color: #4db8ff; }
 .curva-nord-color { background-color: #ffcc66; }
 .curva-sud-color { background-color: #4dff8e; }
-.non-disponibile-color { background-color: black; } /* Nuovo stile per "Non disponibile" */
+.non-disponibile-color { background-color: black; }
 
-/* Informazioni */
 #info-box {
     margin-top: 20px;
     padding: 15px;
@@ -168,11 +183,10 @@ body {
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     display: inline-block;
-    color: #000000; /* Colore nero */
-    font-weight: bold; /* Grassetto */
+    color: #000000;
+    font-weight: bold;
 }
 
-/* Stile per il tasto "Prenota" */
 #prenota-btn {
     margin-top: 10px;
     padding: 10px 20px;
@@ -186,25 +200,43 @@ body {
 #prenota-btn:hover {
     background-color: #45a049;
 }
-
-/* Sfondo sfocato */
-.blur-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("sfondo.png"); /* Immagine di sfondo */
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    filter: blur(2px); /* Ridotta sfocatura del 50% */
-    z-index: -1; /* Mantiene lo sfondo dietro il contenuto */
+/* Contenitore per i loghi - aggiornato per centratura migliore */
+.logos-container {
+    display: flex;
+    justify-content: center; /* Centra orizzontalmente */
+    align-items: center;
+    gap: 100px; /* Distanza uniforme tra i loghi */
+    margin-top: 20px;
 }
 
-/* Assicura che il contenuto sia sopra lo sfondo */
-#stadium-container, #info-box, #legend, h1, p {
-    position: relative;
-    z-index: 1;
+/* Singolo logo e nome squadra */
+.logo-item {
+    display: flex;
+    flex-direction: column; /* Per mettere il nome sotto il logo */
+    align-items: center; /* Centra il nome rispetto al logo */
+    justify-content: center;
+    text-align: center;
 }
 
+/* Stile per i loghi */
+.logo {
+    width: 120px; /* Puoi aumentare/diminuire per una dimensione uniforme */
+    height: 120px;
+    object-fit: contain; /* Adatta l'immagine senza distorcerla */
+    margin-bottom: 10px; /* Spazio tra il logo e il nome */
+}
+
+/* Stile per i nomi delle squadre sotto i loghi */
+.team-name {
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: #333;
+    text-align: center;
+}
+.address {
+    display: block; /* Mantiene l'indirizzo su una nuova riga */
+    margin-top: 5px; /* Spazio sopra l'indirizzo */
+    font-size: 1rem; /* Dimensione del testo */
+    text-indent: 70px; /* Sposta il testo verso destra */
+}
