@@ -3,55 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prenotazione Posti Stadio Pegaso</title>
+    <title>AC Pegaso VS Virtus Aquila</title>
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
-    <style>
-        /* Aggiunta di stile per l'immagine del logo */
-        .logo {
-            width: 100px; /* Dimensione ridotta */
-            height: 100px; /* Altezza per mantenere il rapporto */
-            border-radius: 50%; /* Rende l'immagine rotonda */
-            object-fit: cover; /* Assicura che l'immagine si adatti bene nel cerchio */
-            margin: 10px auto; /* Margine per centrare */
-            display: block; /* Centra l'immagine */
-        }
-
-        /* Sfondo sfocato */
-        .blur-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url("sfondo.png"); /* Immagine di sfondo */
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            filter: blur(2px); /* Ridotta sfocatura del 50% */
-            z-index: -1; /* Mantiene lo sfondo dietro il contenuto */
-        }
-
-        /* Stile per le scritte in nero e grassetto */
-        p, #legend span, #seat-details, h1 {
-            color: #000000; /* Colore nero */
-            font-weight: bold; /* Grassetto */
-        }
-
-        /* Colore nero e grassetto per il titolo "Dettagli Posto" */
-        #info-box h2 {
-            color: #000000;
-            font-weight: bold;
-        }
-    </style>
 </head>
 <body>
-    <!-- Div per lo sfondo sfocato -->
-    <div class="blur-background"></div>
+    <!-- Titolo principale -->
+    <h1>AC Pegaso VS Virtus Aquila</h1>
 
-    <h1>Prenotazione Posti per lo Stadio Pegaso</h1>
-    <!-- Aggiunta dell'immagine del logo con classe per lo stile -->
-    <img src="logo.png" alt="Logo AC Pegaso" class="logo">
+    <!-- Contenitore per i loghi sotto il titolo -->
+    <div class="logos-container">
+        <!-- Logo AC Pegaso -->
+        <img src="logo.png" alt="Logo AC Pegaso" class="logo">
+        
+        <!-- Logo Virtus Aquila -->
+        <img src="Aquila.png" alt="Logo Virtus Aquila" class="logo">
+    </div>
+
+    <!-- Dettagli Partita -->
+    <div class="match-details">
+        <p>📅 <strong>Data:</strong> Sabato 20 Aprile 2025</p>
+        <p>🕖 <strong>Orario:</strong> Calcio d’inizio alle <strong>19:00</strong></p>
+        <p>📍 <strong>Luogo:</strong> Stadio Pegaso Olimpico<br>
+        <span class="address">Via delle Stelle 45, RM</span></p>
+    </div>    
     
     <p>Seleziona un posto per visualizzare i dettagli.</p>
 
@@ -71,7 +46,7 @@
         <div id="curva-sud" class="sector" data-name="Curva Sud"></div>
     </div>
 
-    <!-- Legenda dei settori (singola) -->
+    <!-- Legenda dei settori -->
     <div id="legend">
         <div class="legend-item">
             <div class="legend-color tribuna-color"></div>
@@ -95,7 +70,7 @@
         </div>
     </div>
 
-    <!-- Dettagli del posto selezionato (singola) -->
+    <!-- Dettagli del posto selezionato -->
     <div id="info-box">
         <h2>Dettagli Posto</h2>
         <p id="seat-details">Seleziona un posto per vedere i dettagli.</p>
@@ -103,4 +78,7 @@
     </div>
 </body>
 </html>
+
+
+
 
